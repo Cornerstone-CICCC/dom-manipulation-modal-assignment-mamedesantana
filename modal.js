@@ -1,9 +1,20 @@
-console.log("here");
+const button = document.querySelector("#openModal");
+const modal = document.querySelector("#modal");
 
-// select button element
+button.addEventListener("click", () => {
 
-// add event listener on click to button
-// remove class invisible from div modal
+  modal.classList.remove("invisible");
 
-// add event listener on key press Escape
-// add class invisible to div modal
+  setTimeout(() => {
+    modal.classList.add("invisible");
+  }, 5000);
+
+});
+
+document.addEventListener("keyup", (event) => {
+
+  if (event.key === "Escape") {
+    modal.classList.add("invisible");
+  }
+
+});
